@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="">
+		.newcal{
+			border: 1px solid #ccc;
+			width: 30%;
+			padding: 10px;
+			background-color:  #f0f0f0;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		}
+		.btn{
+			padding: 20px;
+			margin: 10px;
+			border-radius: 5px;
+			background-color:  #99A3A4;
+			font-size: 25px;
+			box-shadow: 3px 5px 4px rgb(0,0,0,0.5);
+
+		}
+		.btn:hover
+			{
+  			background-color: #e0e0e0;
+			}
+
+		.f1{
+			background-color: #F7F9F9;
+			border: 1px solid #ccc;
+			font-size: 25px;
+			padding: 10px;
+			width: 75%;
+			border-radius: 10px;
+			text-align: right;
+			box-shadow: 3px 5px 4px rgb(0,0,0,0.5);
+		}
+		.btn1{
+			padding: 15px;
+			margin: 10px;
+			border-radius: 5px;
+			background-color: #99A3A4;
+			font-size: 25px;
+			box-shadow: 3px 5px 4px rgb(0,0,0,0.5);
+		}
+		.btn1:hover
+			{
+  			background-color: #e0e0e0;
+			}
+	</style>
+</head>
+<body><center>
+	<div class="newcal">
+
+		<h1>Digital Calculator</h1>
+		<form name="f">
+			<label for="f"></label>
+			<input type="text" name="inp" class="f1" id="inp" pattern="[0-9]*" title="Please enter only numeric value" required><br><br>
+			<input type="button" value="1" class="btn" onclick="f.inp.value+='1'">
+			<input type="button" value="2" class="btn" onclick="f.inp.value+='2'">
+			<input type="button" value="3" class="btn" onclick="f.inp.value+='3'">
+			<input type="button" value="+" class="btn" onclick="f.inp.value+='+'">
+			<br><br>
+			
+			<input type="button" value="4" class="btn" onclick="f.inp.value+='4'">
+			<input type="button" value="5" class="btn" onclick="f.inp.value+='5'">
+			<input type="button" value="6" class="btn" onclick="f.inp.value+='6'">
+			<input type="button" value="-" class="btn" onclick="f.inp.value+='-'">
+			<br><br>
+			
+			<input type="button" value="7" class="btn" onclick="f.inp.value+='7'">
+			<input type="button" value="8" class="btn" onclick="f.inp.value+='8'">
+			<input type="button" value="9" class="btn" onclick="f.inp.value+='9'">
+			<input type="button" value="*" class="btn" onclick="f.inp.value+='*'">
+			<br><br>
+			
+			<input type="button" value="0" class="btn" onclick="f.inp.value+='0'">
+			<input type="button" value="/" class="btn" onclick="f.inp.value+='/'">
+			<input type="button" value="C" class="btn" onclick="f.inp.value =' '">
+			<input type="button" value="=" class="btn" onclick="f.inp.value=eval(f.inp.value)">
+			<br><br>
+
+			<input type="button" value="%" class="btn1" onclick="f.inp.value+='%'">
+			<input type="button" value="MC" class="btn1" onclick="removeLastDigit()">
+			<input type="button" value="." class="btn1" onclick="f.inp.value+='.'">
+			<input type="button" value="00" class="btn1" onclick="f.inp.value+='00'">
+			<br><br>
+		</form>
+	</div>
+	</center>
+
+	 <script>
+    function removeLastDigit() {
+      var inp = document.f.inp;
+      var currentValue = inp.value;
+      if (currentValue.length > 0) {
+        inp.value = currentValue.slice(0, -1);
+      }
+    }
+  </script>
+</body>
+</html>
